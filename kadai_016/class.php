@@ -9,45 +9,53 @@
     <p>
         <?php
         class Food {
-            public $name;
-            public $price;
+            private $name;
+            private $price;
 
             public function __construct(string $name, int $price){
                 $this->name = $name;
                 $this->price = $price;
             }
 
+            public function show_price() {
+                echo $this->price;
+              }
+
         }
 
-        $food = new food('potato', 250);
-
-        print_r($food);
-        echo '<br>';
-
         class Animal {
-            public $name;
-            public $heigth;
-            public $weight;
+            private $name;
+            private $height;
+            private $weight;
 
-            public function __construct(string $name, int $heigth, string $weight) {
+            public function __construct(string $name,int $height, string $weight) {
                 $this->name = $name;
-                $this->heigth = $heigth;
-                $this->weight =$weight;
+                $this->height = $height;
+                $this->weight = $weight;
             }
 
 
             public function show_height() {
-                echo $this->height . '<br>';
+                echo $this->height;
             }
         }
 
-        $animal = new animal('dog', '60', '5000');
+        $poteto = new Food('potato', 250);
+        $dog = new Animal('dog', '60', '5000');
 
-        print_r($animal);
+        print_r($poteto);
         echo '<br>';
+        print_r($dog);
+        echo '<br>';
+
+        $poteto->show_price();
+        echo '<br>';
+
+        $dog->show_height();
+
     ?>
     </p>
-    <p>
+    <!-- <p>
     <?php
         #[AllowDynamicProperties]
         class foodPrice {
@@ -84,6 +92,6 @@
         $animalHeight->show_name();
 
     ?>
-    </p>
+    </p> -->
 </body>
 </html>
